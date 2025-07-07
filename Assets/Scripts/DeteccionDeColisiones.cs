@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
     public ScoreManager scoreManager;
-    public MercaderiaScript mercaderiaScript;
+    public int points;
+
 
     void Start()
     {
-        scoreManager =  FindObjectOfType<ScoreManager>();
-        mercaderiaScript = GetComponent<MercaderiaScript>();
-    }
+        scoreManager = FindObjectOfType<ScoreManager>(); // devuelve primer componente que encuentre de ese tipo
 
-    void OnCollisionEnter(Collision col)
+    }
+    private void OnCollisionEnter(Collision col) // funcion para que suceda algo cuando suceda una colision
     {
         Debug.Log("Contacto");
+
         if (col.gameObject.name == "Player")
         {
             Destroy(gameObject);
-            scoreManager.AddScore(mercaderiaScript.scorePoints);
-        }        
+            scoreManager.AddScore(points);
+        }
     }
 }
