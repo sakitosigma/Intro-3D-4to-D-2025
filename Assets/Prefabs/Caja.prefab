@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
-  mercaderiaScript: {fileID: 0}
+  points: 5
 --- !u!1 &8829511666291986769
 GameObject:
   m_ObjectHideFlags: 0
