@@ -25,6 +25,7 @@ public class interactionArea : MonoBehaviour
                 if (colisiones != null)
                 {
                     Destroy(colisiones.gameObject);
+                    scoreManager.AddScore(points);
                     EndInteraction();
                 }
                 else

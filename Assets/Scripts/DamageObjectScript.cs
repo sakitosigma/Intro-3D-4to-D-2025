@@ -13,12 +13,19 @@ public class DamageObjectScript : MonoBehaviour
     {
         healthManager = FindObjectOfType<HealthManager>();
     }
-    void OnCollisionEnter(Collision col)
-    {
+    void OnCollisionEnter(Collision col) {
         if (col.gameObject.name == "Player")
         {
             healthManager.TakeDamage(damagePoints);
             Destroy(gameObject);
         }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name != "SimpleFPSController") return;
+        Destroy(gameObject);
+        healthManager.TakeDamage(damagePoints);
     }
 }
