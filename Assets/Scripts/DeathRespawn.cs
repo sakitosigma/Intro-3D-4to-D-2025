@@ -19,7 +19,7 @@ public class DeathRespawn : MonoBehaviour
         if (transform.position.y < deathHeight)
         {
             Debug.Log("Respawn");
-            SceneManager.LoadScene("terminado");
+            SceneManager.LoadScene("TERMINADOOOOO");
         }
     }
 }
